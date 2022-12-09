@@ -11,12 +11,12 @@ export function TaskContextProvider(props) {
 	// create a function that will be send to the child component PARENT -> CHILD and back
 	const createTask = (task) => {
 		setTasks([
-			...tasks,
 			{
 				title: task.title,
 				id: tasks.length,
 				description: task.description,
 			},
+			...tasks,
 		]);
 	};
 

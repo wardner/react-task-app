@@ -9,11 +9,15 @@ function TaskList() {
 
 	// if there is no tasks, show a message
 	if (!tasks.length) {
-		return <h1>It seems that you doesnt have task yet</h1>;
+		return (
+			<h1 className='text-white text-4xl font-bold text-center'>
+				It seems that you doesnt have task yet
+			</h1>
+		);
 	}
 
 	return (
-		<div>
+		<div className='grid grid-cols-4 gap-2'>
 			{/* map the tasks and send the task and the deleteTask function to the TaskCard component */}
 			{tasks.map((task) => (
 				<TaskCard key={task.id} task={task} />
