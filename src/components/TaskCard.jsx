@@ -1,9 +1,15 @@
-function TaskCard({ task, deleteTask }) {
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
+
+function TaskCard({ task }) {
+	// get the deleteTask function from the context
+	const { deleteTask } = useContext(TaskContext);
+
 	return (
 		<div>
 			<h1>{task.title}</h1>
 			<p>{task.description}</p>
-			{/* send the task id to the deleteTask function in the parent component CHILD -> PARENT -> PARENT */}
+			{/* execute the deleteTask function from the context */}
 			<button onClick={() => deleteTask(task.id)}>Delete Task</button>
 		</div>
 	);

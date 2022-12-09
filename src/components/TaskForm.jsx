@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
-function TaskForm({ createTask }) {
-	// create a state for the title and description, this data will be send to the parent component
+function TaskForm() {
+	// create a state for the title and description
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
+	const { createTask } = useContext(TaskContext);
 
 	const handleSubmit = (e) => {
 		// prevent the page from reloading cause is a form
 		e.preventDefault();
 
-		// create a new task and send it to the parent component CHILD -> PARENT
+		// use the createTask function from the context
 		createTask({ title, description });
 
 		// clear the form, setting the state to empty string
