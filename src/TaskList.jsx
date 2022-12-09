@@ -1,13 +1,4 @@
-import { tasks as data } from "./tasks";
-import { useState, useEffect } from "react";
-
-function TaskList() {
-	const [tasks, setTasks] = useState([]);
-
-	useEffect(() => {
-		setTasks(data);
-	}, []);
-
+function TaskList({ tasks }) {
 	if (!tasks.length) {
 		return <h1>It seems that you doesnt have task yet</h1>;
 	}

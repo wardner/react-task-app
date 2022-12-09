@@ -11,11 +11,6 @@ export const tasks = [
 	},
 	{
 		id: 2,
-		title: "Wash the car",
-		description: "Wash the car with a sponge",
-	},
-	{
-		id: 3,
 		title: "Clean the bathroom",
 		description: "Clean the bathroom with detergent",
 	},
